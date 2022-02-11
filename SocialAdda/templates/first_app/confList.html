@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% extends "first_app/start.html" %}
+{% block body_block %}
+<h1>Confessions:</h1>
+<div class="container">
+    {% if conf_lis %}
+    <ol>
+        {% for conf in conf_lis %}
+        <li>
+            {{conf.text}}
+        </li>
+        {%endfor%}
+    </ol>
+    {%else%}
+    <h1>NO CONFESSIONS</h1>
+    {%endif%}
+</div>
+{%endblock%}

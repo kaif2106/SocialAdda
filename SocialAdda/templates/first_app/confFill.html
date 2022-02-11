@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% extends "first_app/start.html" %}
+{% block body_block %}
+<h1>New Confession:</h1>
+<div class = "container">
+    <form method = "post">
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type="submit" class="btn btn-primary" value = "submit">
+    </form>
+</div>
+{% endblock %}
