@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from first_app.forms import formName
 from first_app.models import Conf
+from django.views import generic
 
 # Create your views here.
 
@@ -19,6 +20,8 @@ def confFill(request):
     cd = {'form':form}
     return render(request, 'first_app/confFill.html', cd)
 
-def confList(request):
-    conf_lis = Conf.objects.all()
-    return render(request, 'first_app/confList.html', {'conf_lis':conf_lis})
+
+class confList(generic.ListView):
+    model = Conf
+    template_name = 'first_app/confList.html'
+
