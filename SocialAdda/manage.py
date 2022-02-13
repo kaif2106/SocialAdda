@@ -4,6 +4,7 @@ import os
 import sys
 
 
+#Adding a random command
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'SocialAdda.settings')
