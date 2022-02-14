@@ -3,16 +3,17 @@ from first_app.models import Conf
 
 register = template.Library()
 
-# @register.filter(name = 'setVis')
-# def setVis(obj):
-#     nObj = Conf.objects.get(pk=obj.pk)
+@register.filter(name = 'setVis')
+def setVis(value):
+    nObj = Conf.objects.get(pk=value)
   
-#     # obj.makeVisible()
-#     # obj.visible = True
-#     nObj.visible = True
-#     print(nObj.pk)
+    nObj.makeVisible()
+    # obj.visible = True
+    nObj.visible = True
+    nObj.save()
+    print(nObj.pk)
     
-#     return
+    return
 
 # @register.filter(name = 'whatPK')
 # def whatPK(value):

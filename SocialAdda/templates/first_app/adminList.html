@@ -4,9 +4,9 @@
 {% load my_extras %}
 <h1>Confessions:</h1>
 <div class="container">
-    {% if lis %}
+    {% if object_list %}
     <ol>
-        {% for conf in lis %}
+        {% for conf in object_list %}
 			
         <ul>
             <h2>{{conf.text}}</h2>
@@ -14,13 +14,15 @@
             pk id: {{conf.pk}}
             {% if conf.visible == 0 %}
 
+            <a href="{% url 'first_app:okok' conf.pk %}">Add</a>
+
             
-            <input type="submit" id = {{conf.pk}} name = {{conf.pk}} class="btn btn-primary" value = "Make visible">
-            <script>
-                if(document.getElementById("{{conf.pk}}").clicked == true){
-                    alert("ok")
-                }
-            </script>
+            <!-- <form method = "post">
+                {%csrf_token%}
+                <input type="submit" class = "btn btn-primary" value="{{conf.pk}}" name="id"/>
+            </form> -->
+            
+            
             
 
 

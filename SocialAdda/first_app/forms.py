@@ -12,7 +12,7 @@ class voteForm(forms.Form):
     upVote = forms.BooleanField()
     downVote = forms.BooleanField()
 
-#class submitForm(forms.Form):
+
 
    
 
