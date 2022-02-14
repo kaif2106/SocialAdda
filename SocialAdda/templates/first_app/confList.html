@@ -2,15 +2,14 @@
 {% extends "first_app/start.html" %}
 {% block body_block %}
 <h1>Confessions:</h1>
-<div class="container">
+<div class="container text-white px-12 ">
     {% if object_list %}
-    <ol>
+    <ol class="table">
         {% for conf in object_list %}
 				{% if conf.visible == True %}
-        <ul>
-						<h2>{{conf.text}}</h2>
-            Votes :{{conf.votes}}
-        </ul>
+        <li class="list-item my-8">
+						<h2 class="text-2xl">{{conf.text}}</h2>
+        </li>
 				{% endif %}
         {%endfor%}
     </ol>

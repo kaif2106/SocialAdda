@@ -3,33 +3,17 @@
 {% block body_block %}
 {% load my_extras %}
 <h1>Confessions:</h1>
-<div class="container">
+<div class="container text-white px-12">
     {% if object_list %}
-    <ol>
+    <ol class="table">
         {% for conf in object_list %}
-			
-        <ul>
-            <h2>{{conf.text}}</h2>
-            Votes :{{conf.votes}}
-            pk id: {{conf.pk}}
+        <li class="list-item my-8">
+            <h1 class = "text-2xl">{{conf.text}}
             {% if conf.visible == 0 %}
-
-            <a href="{% url 'first_app:okok' conf.pk %}">Add</a>
-
-            
-            <!-- <form method = "post">
-                {%csrf_token%}
-                <input type="submit" class = "btn btn-primary" value="{{conf.pk}}" name="id"/>
-            </form> -->
-            
-            
-            
-
-
-           
+            <a class = "text-xl px-4 py text-white bg-green-500 rounded-full" href="{% url 'first_app:okok' conf.pk %}">ADD</a>
             {%endif%}
-        </ul>
-				
+            </h1>
+        </li>
         {%endfor%}
     </ol>
 		{%else%}

@@ -110,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
+NPM_BIN_PATH = r"D:\Kaif\other\node\npm.cmd"
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
