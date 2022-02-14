@@ -40,6 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'first_app',
+    'tailwind',
+    'app',
+]
+
+TAILWIND_APP_NAME = 'app'
+
+INTERNAL_IPS = [
+    "127.0.0.1",
 ]
 
 MIDDLEWARE = [
@@ -102,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
