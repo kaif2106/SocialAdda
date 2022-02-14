@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% extends "first_app/start.html" %}
+{% block body_block %}
+{% load my_extras %}
+<h1>Confessions:</h1>
+<div class="container">
+    {% if lis %}
+    <ol>
+        {% for conf in lis %}
+			
+        <ul>
+            <h2>{{conf.text}}</h2>
+            Votes :{{conf.votes}}
+            pk id: {{conf.pk}}
+            {% if conf.visible == 0 %}
+
+            
+            <input type="submit" id = {{conf.pk}} name = {{conf.pk}} class="btn btn-primary" value = "Make visible">
+            <script>
+                if(document.getElementById("{{conf.pk}}").clicked == true){
+                    alert("ok")
+                }
+            </script>
+            
+
+
+           
+            {%endif%}
+        </ul>
+				
+        {%endfor%}
+    </ol>
+		{%else%}
+    <h1>NO CONFESSIONS</h1>
+    {%endif%}
+</div>
+{%endblock%}

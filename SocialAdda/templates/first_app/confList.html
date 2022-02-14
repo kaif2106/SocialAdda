@@ -6,7 +6,7 @@
     {% if object_list %}
     <ol>
         {% for conf in object_list %}
-				{% if conf.visible == 1 %}
+				{% if conf.visible == True %}
         <ul>
 						<h2>{{conf.text}}</h2>
             Votes :{{conf.votes}}

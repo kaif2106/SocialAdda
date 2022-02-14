@@ -8,4 +8,5 @@ app_name = 'first_app'
 urlpatterns = [
     url(r'^$', views.confFill, name = 'confFill'),
     url(r'^confList/$', views.confList.as_view(), name = 'confList'),
+    url(r'^adminList/$', views.adminList, name = 'adminList'),
 ]
