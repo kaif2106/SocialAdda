@@ -4,7 +4,7 @@ from django.db import models
 class Conf(models.Model):
     votes = models.IntegerField(default=0)
     text = models.TextField()
-    visible = models.BooleanField(default=0)
+    visible = models.BooleanField(default=1)
 
     def __str__(self):
         return self.text
