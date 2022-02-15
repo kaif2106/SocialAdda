@@ -2,14 +2,24 @@
 <!DOCTYPE html>
 {% extends "first_app/start.html" %}
 {% block body_block %}
+
+
 <h1>New Confession:</h1>
+
 <div class = "container">
     <form method = "post">
-        {{form.as_p}}
         {% csrf_token %}
-        <button class= "ml-9 mt-3 px-5 py-2 bg-green-500 text-white font-semibold hover:text-black border border-green-800 hover:border-white rounded-full">
+        <div class = "py-5 px-7 mx-5">
+            {{form.heading}}
+        </div>
+        <div class = "px-7 mx-5">
+            {{form.text}}
+        </div>
+        <div class="px-2 py-2">
+        <button class= "ml-9 mt-3 px-5 py-2 bg-redditNav text-white font-semibold hover:text-redditNav hover:bg-zinc-500 border-zinc-500 hover:border-black border-2 rounded-full">
             Submit
         </button>
+        </div>
         
     </form>
 </div>
