@@ -29,7 +29,7 @@ def okok(request, cpk):
     pls.visible = True
     pls.makeVisible()
     pls.save()
-    return start(request)
+    return adminList(request)
 
 
 
@@ -37,35 +37,14 @@ class confList(generic.ListView):
     model = Conf
     template_name = 'first_app/confList.html'
 
-
-# class adminList(generic.ListView):
-#     model = Conf
-#     template_name = 'first_app/adminList.html'
     
 
 def adminList(request):
     lis = Conf.objects.all()
-    # pls = Conf.objects.get(pk=34)
-    # print("cla")
-    # print(pls.pk)
-    # pls.visibile = True
-    # pls.makeVisible()
-    # print(pls.visible)
-    # pls.save()
-    #a = Conf.objects.get()
-    #form = forms.Form()
-
     if request.method == 'POST':   
-        #print("yeah") 
-        #print(request.POST.get('id'))
         pls = Conf.objects.get(pk=request.POST.get('id'))
         pls.visible = True
-        pls.makeVisible()
         pls.save()
-        return start(request)
+        
     return render(request, 'first_app/adminList.html', {'object_list':lis})
-
-# def adminList(request):
-#     lis = Conf.objects.all()
-#     return render(request, 'first_app/adminList.html', {'lis':lis})
 
