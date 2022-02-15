@@ -11,6 +11,8 @@ app_name = 'first_app'
 urlpatterns = [
     url(r'^$', views.confFill, name = 'confFill'),
     url(r'^confList/$', views.confList.as_view(), name = 'confList'),
-    url(r'^adminList/$', views.adminList, name = 'adminList'),
-    path(r'cf/<int:cpk>/', views.okok, name = "okok")
+    path(r'adminList/', views.adminList, name = 'adminList'),
+    path(r'add/<int:cpk>/', views.okok, name = "okok"),
+    path(r'delete/<int:cpk>/', views.deleteView, name = "deleteView"),
+
 ]

@@ -1,6 +1,5 @@
-from unicodedata import name
-from urllib import request
-from django.shortcuts import render
+import re
+from django.shortcuts import redirect, render
 from first_app.forms import formName
 from django import forms
 from first_app.models import Conf
@@ -24,19 +23,12 @@ def confFill(request):
     return render(request, 'first_app/confFill.html', cd)
 
 def okok(request, cpk):
-    
     pls = Conf.objects.get(pk=cpk)
     pls.visible = True
     pls.save()
-    return adminList(request)
+    return redirect('/first_app/adminList/')
 
 
-
-class confList(generic.ListView):
-    model = Conf
-    template_name = 'first_app/confList.html'
-
-    
 
 def adminList(request):
     lis = Conf.objects.all()
@@ -46,4 +38,14 @@ def adminList(request):
         pls.save()
         
     return render(request, 'first_app/adminList.html', {'object_list':lis})
+
+
+def deleteView(request, cpk):
+    target = Conf.objects.get(pk = cpk)
+    target.delete()
+    return redirect('/first_app/adminList/')
+
+class confList(generic.ListView):
+    model = Conf
+    template_name = 'first_app/confList.html'
 
