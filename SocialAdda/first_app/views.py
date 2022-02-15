@@ -27,7 +27,6 @@ def okok(request, cpk):
     
     pls = Conf.objects.get(pk=cpk)
     pls.visible = True
-    pls.makeVisible()
     pls.save()
     return adminList(request)
 
