@@ -7,15 +7,26 @@
     {% if object_list %}
     <ol class="table">
         {% for conf in object_list %}
-        <li class="list-item my-8 rounded-xl border-2 border-separate mx-72 py-10 text-left px-10 pt-5 pb-28 max-w-max">
+        <li class="list-item my-8 rounded-xl border-2 border-separate mx-72 py-10 text-left px-10 pt-5 pb-20 max-w-max">
             <h1 class = "text-3xl max-w-max">{{conf.heading}}</h1>
             <h2 class="mt-3 text-xl text-gray-400 max-w-max">{{conf.text}}</h2>
             
+            <a id = "zz" class = "mx-5 text-left text-xl px-5 py-2 text-white bg-red-600 rounded-full" href="{% url 'first_app:deleteView' conf.pk %}">DELETE</a>    
+            <style>
+                h2{
+                    margin-bottom: 30px;
+                }
+                #zz{
+                    margin-left: -2px;
+                }
+            </style>
+            {% if conf.visible == 0 %}
+            <a class = "text-left text-xl px-5 py-2 text-white bg-green-500 rounded-full" href="{% url 'first_app:okok' conf.pk %}">ADD</a> 
+            {%endif%}
+            
         </li>
-        <a id = "tt" class = "mx-5 text-left text-xl px-5 py-2 text-white bg-red-600 rounded-full" href="{% url 'first_app:deleteView' conf.pk %}">DELETE</a>    
-        {% if conf.visible == 0 %}
-        <a class = "text-left text-xl px-5 py-2 text-white bg-green-500 rounded-full" href="{% url 'first_app:okok' conf.pk %}">ADD</a> 
-        {%endif%}
+        
+        
 
         
         {%endfor%}
