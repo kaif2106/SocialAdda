@@ -1,6 +1,6 @@
 import re
 from django.shortcuts import redirect, render
-from first_app.forms import formName
+from first_app.forms import formName, AddComment
 from django import forms
 from first_app.models import Conf
 from django.views import generic
@@ -49,3 +49,7 @@ class confList(generic.ListView):
     model = Conf
     template_name = 'first_app/confList.html'
 
+def postDetail(request, cpk):
+    target = Conf.objects.get(pk = cpk)
+    commentForm = AddComment()
+    return render(request, 'first_app/postPage.html', {'conf':target, 'commentForm':commentForm})
