@@ -15,5 +15,6 @@ urlpatterns = [
     path(r'add/<int:cpk>/', views.okok, name = "okok"),
     path(r'post/<int:cpk>/', views.postDetail, name = "postDetail"),
     path(r'delete/<int:cpk>/', views.deleteView, name = "deleteView"),
+    
 
 ]
