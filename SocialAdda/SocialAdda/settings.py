@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-p8%scmk2^!)ci*a8i4#(x-aliz_55h&2^v_u9g1xwpx#@6iak0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.1.1','127.0.0.1']
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'first_app',
     'tailwind',
     'app',
+    'django_browser_reload',
 ]
 
 TAILWIND_APP_NAME = 'app'
@@ -58,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_browser_reload.middleware.BrowserReloadMiddleware',
 ]
 
 ROOT_URLCONF = 'SocialAdda.urls'
@@ -110,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-NPM_BIN_PATH = r"D:\Kaif\other\node\npm.cmd"
+NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 

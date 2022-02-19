@@ -14,5 +14,6 @@ urlpatterns = [
     path(r'adminList/', views.adminList, name = 'adminList'),
     path(r'add/<int:cpk>/', views.okok, name = "okok"),
     path(r'delete/<int:cpk>/', views.deleteView, name = "deleteView"),
+    
 
 ]
