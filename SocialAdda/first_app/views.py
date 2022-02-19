@@ -2,7 +2,7 @@ import re
 from django.shortcuts import redirect, render
 from first_app.forms import formName, AddComment
 from django import forms
-from first_app.models import Conf
+from first_app.models import Conf, Comment
 from django.views import generic
 
 # Create your views here.
@@ -50,6 +50,23 @@ class confList(generic.ListView):
     template_name = 'first_app/confList.html'
 
 def postDetail(request, cpk):
+    all_comments = Comment.objects.all()
+    print(all_comments)
     target = Conf.objects.get(pk = cpk)
+    
     commentForm = AddComment()
-    return render(request, 'first_app/postPage.html', {'conf':target, 'commentForm':commentForm})
+    commentForm.id_conf = cpk
+    if request.method == 'POST':
+        print('g')
+        if commentForm.is_valid():   
+        #print(request.POST['text'])
+        # commentForm = AddComment(request.POST)
+        
+            commentForm.text = request.POST['text']
+            print('n')
+            print(commentForm)
+    
+            commentForm.save(commit=True)
+        
+        
+    return render(request, 'first_app/postPage.html', {'conf':target, 'commentForm':commentForm, 'all_comments':all_comments})

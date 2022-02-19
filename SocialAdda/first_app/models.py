@@ -18,7 +18,7 @@ class Conf(models.Model):
 
 class Comment(models.Model):
     text = models.CharField(max_length=500)
-    conf = models.ForeignKey(Conf, on_delete=models.CASCADE)
+    id_conf = models.IntegerField(default=0)
 
     def __str__(self):
         return self.text
