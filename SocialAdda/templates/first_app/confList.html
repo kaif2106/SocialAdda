@@ -7,10 +7,10 @@
     <ol class="table">
         {% for conf in object_list %}
 				{% if conf.visible == True %}
-        <li class="list-item my-8 rounded-xl border-2 border-separate mx-72 py-10 text-left px-10 pt-5 pb-20">
+        <a href="{% url 'first_app:postDetail' conf.pk %}"><li class="list-item my-8 rounded-xl border-2 border-separate mx-72 py-10 text-left px-10 pt-5 pb-20">
           <h1 class = "text-3xl max-w-max">{{conf.heading}}</h1>
 						<h2 class="mt-3 text-xl text-gray-400 max-w-max">{{conf.text}}</h2>
-        </li>
+        </li></a>
 				{% endif %}
         {%endfor%}
     </ol>
