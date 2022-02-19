@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^confList/$', views.confList.as_view(), name = 'confList'),
     path(r'adminList/', views.adminList, name = 'adminList'),
     path(r'add/<int:cpk>/', views.okok, name = "okok"),
+    path(r'post/<int:cpk>/', views.postDetail, name = "postDetail"),
     path(r'delete/<int:cpk>/', views.deleteView, name = "deleteView"),
     
 
