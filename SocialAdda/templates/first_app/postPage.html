@@ -11,28 +11,30 @@
     <ol class="table">
         {% for com in all_comments %}
             {% if com.id_conf == conf.pk %}
-            <li class="list-item my-8 rounded-xl border-2 border-separate mx-72 py-10 text-left px-10 pt-5 pb-20">
-		<h2 class="mt-3 text-xl text-gray-400 max-w-max">{{com.text}}</h2>
+            <li class="list-item my-8 rounded-xl border-2 border-separate mx-72 py-3 text-left px-10 pt-1 pb-12">
+		<h2 class="mt-4 text-xl text-gray-400 max-w-max">{{com.text}}</h2>
         </li>
 				{% endif %}
         {%endfor%}
     </ol>
 </div>
 
-<div class = "container">
+<div class="">
+
     <form method = "post">
         {% csrf_token %}
         
-        <div class = "px-7 mx-5">
-            {{commentForm.text}}
+        <div class = "relative left-10" style="left: 335px; width: 200px;">
+            {{commentForm}}
         </div>
-        <div class="px-2 py-2">
-        <button class= "ml-9 mt-3 px-5 py-2 bg-redditNav text-white font-semibold hover:text-redditNav hover:bg-zinc-500 border-zinc-500 hover:border-black border-2 rounded-full">
+        <div class="">
+        <button style="left: 300px;" class= "relative left-10 ml-9 mt-3 px-5 py-2 bg-redditNav text-white font-semibold hover:text-redditNav hover:bg-zinc-500 border-zinc-500 hover:border-black border-2 rounded-full">
             Submit
         </button>
         </div>
         
     </form>
+
 </div>
 
 

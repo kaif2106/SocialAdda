@@ -1,5 +1,5 @@
 from django import forms
-from first_app.models import Comment
+
 from first_app.models import Conf
 
 class formName(forms.ModelForm):
@@ -25,18 +25,35 @@ class formName(forms.ModelForm):
         # heading = forms.CharField(max_length=200)
         # text = forms.CharField(max_length=100)
 
-class AddComment(forms.ModelForm):
-    class Meta:
-        model = Comment
-        fields = ['text']
-        widgets = {
-            'text': forms.Textarea(attrs={
-                'class':'',
-                'style':'max-width: 900px; color: white; background-color: #1a1a1b;',
-                'placeholder':'Text',
-                'cols': '90'
-            })
-        }
+class AddComment(forms.Form):
+    text = forms.CharField(widget=forms.Textarea(attrs={
+        'style':'max-width: 900px; color: white; background-color: #1a1a1b;',
+        'placeholder':'Comment',
+        'rows':5,
+        'cols':90
+    }))
+
+    # text = forms.CharField()
+    # fields = ['text']
+    # widgets = {
+    #     'text': forms.Textarea(attrs={
+    #         'class':'',
+    #         'style':'max-width: 900px; color: white; background-color: #1a1a1b;',
+    #         'placeholder':'Text',
+    #         'cols': '90'
+    #     })
+    # }
+    # class Meta:
+    #     model = Comment
+    #     fields = ['text']
+    #     widgets = {
+    #         'text': forms.Textarea(attrs={
+    #             'class':'',
+    #             'style':'max-width: 900px; color: white; background-color: #1a1a1b;',
+    #             'placeholder':'Text',
+    #             'cols': '90'
+    #         })
+    #     }
 
         
 

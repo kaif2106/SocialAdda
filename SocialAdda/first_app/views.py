@@ -1,4 +1,4 @@
-import re
+
 from django.shortcuts import redirect, render
 from first_app.forms import formName, AddComment
 from django import forms
@@ -51,22 +51,11 @@ class confList(generic.ListView):
 
 def postDetail(request, cpk):
     all_comments = Comment.objects.all()
-    print(all_comments)
     target = Conf.objects.get(pk = cpk)
-    
     commentForm = AddComment()
-    commentForm.id_conf = cpk
     if request.method == 'POST':
-        print('g')
-        if commentForm.is_valid():   
-        #print(request.POST['text'])
-        # commentForm = AddComment(request.POST)
-        
-            commentForm.text = request.POST['text']
-            print('n')
-            print(commentForm)
-    
-            commentForm.save(commit=True)
-        
+        newObject = Comment(text = request.POST['text'], id_conf = cpk)
+        newObject.save()
+        return redirect(request.META['HTTP_REFERER'])
         
     return render(request, 'first_app/postPage.html', {'conf':target, 'commentForm':commentForm, 'all_comments':all_comments})
