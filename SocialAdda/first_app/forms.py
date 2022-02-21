@@ -10,14 +10,14 @@ class formName(forms.ModelForm):
         widgets = {
             'heading': forms.Textarea(attrs={
                 'class':'',
-                'style':'max-width: 900px; color: white; background-color: #1a1a1b; resize: none;',
+                'style':'max-width: 100%; color: white; background-color: #1a1a1b; resize: none;',
                 'placeholder':'Heading',
                 'rows':'1',
                 'cols':'90'
             }),
             'text': forms.Textarea(attrs={
                 'class':'',
-                'style':'max-width: 900px; color: white; background-color: #1a1a1b;',
+                'style':'max-width: 100%; color: white; background-color: #1a1a1b;',
                 'placeholder':'Text',
                 'cols': '90'
             })
@@ -27,7 +27,7 @@ class formName(forms.ModelForm):
 
 class AddComment(forms.Form):
     text = forms.CharField(widget=forms.Textarea(attrs={
-        'style':'max-width: 900px; color: white; background-color: #1a1a1b;',
+        'style':'max-width: 100%; color: white; background-color: #1a1a1b;',
         'placeholder':'Comment',
         'rows':5,
         'cols':90
