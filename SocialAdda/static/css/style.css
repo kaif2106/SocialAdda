@@ -2,4 +2,7 @@
 #zz{
     margin-left: 250px;
 }
-
+.table{
+    text-align: center;
+    list-style-position: inside;
+  }

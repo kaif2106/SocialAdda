@@ -42,10 +42,12 @@ INSTALLED_APPS = [
     'first_app',
     'tailwind',
     'app',
+    'theme',
     'django_browser_reload',
 ]
 
 TAILWIND_APP_NAME = 'app'
+TAILWIND_APP_NAME = 'theme'
 
 INTERNAL_IPS = [
     "127.0.0.1",

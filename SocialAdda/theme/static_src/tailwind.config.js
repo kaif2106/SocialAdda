@@ -42,16 +42,7 @@ module.exports = {
         // '../../**/*.py'
     ],
     theme: {
-        extend: {
-            colors:{
-                'redditNav':'#1a1a1b',
-                'redditBG':'#030303',
-                'redditBorder':'#2b2c2d',
-                'searchBar':'#272729',
-                'greeen' : '#008000',
-            }
-        },
-        
+        extend: {},
     },
     plugins: [
         /**
